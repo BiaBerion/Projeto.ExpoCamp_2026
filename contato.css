@@ -1,0 +1,35 @@
+body{
+     background:#115c39;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+h2{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #115c39;
+}
+
+p{
+    text-align:center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.margem{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.linha{
+    background-color: rgb(106, 0, 0);
+}
+
+.cor{
+    background-color: black !important;
+}
+
+
+
+
