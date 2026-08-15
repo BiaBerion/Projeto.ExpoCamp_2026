@@ -3,319 +3,577 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto: Direito à alimentação escolar</title>
+
+    <title>Alimentação escolar como direito: pensando as restrições alimentares</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        body{
-            background:#2E7D32;
-            color:white;
-            font-family:Arial, Helvetica, sans-serif;
+
+        /* =========================
+           CONFIGURAÇÕES GERAIS
+        ========================= */
+
+        body {
+            background: #115c39;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
         }
 
-        .container-principal{
-           
-         max-width:1100px;
-        margin:30px auto;
-        padding:40px;
-        background:white;
-        border-radius:20px;
 
+        /* =========================
+           CONTAINER PRINCIPAL
+        ========================= */
+
+        .container-principal {
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 50px;
+            background: white;
+            border-radius: 10px;
         }
 
-        h1,h2{
-            font-weight:bold;
-            color:#33691E;
+
+        /* =========================
+           TÍTULOS
+        ========================= */
+
+        h1,
+        h2 {
+            font-family: 'Franklin Gothic Medium',
+                         'Arial Narrow',
+                         Arial,
+                         sans-serif;
+
+            color: #198754;
         }
 
-        .descricao{
-            background:#7CB342;
-            padding:20px;
-            border-radius:12px;
-            text-align:justify;
-            color:white;
+        h1 {
+            margin-bottom: 40px;
+            line-height: 1.3;
         }
 
-        .carousel{
-            margin-top:40px;
-            border-radius:15px;
-            overflow:hidden;
-            box-shadow:0 0 15px rgba(0,0,0,.3);
+        h2 {
+            margin-top: 60px;
+            margin-bottom: 30px;
+            line-height: 1.4;
         }
 
-        .carousel img{
-            height:300px;
-            object-fit:cover;
+
+        /* =========================
+           DESTAQUE VERMELHO
+        ========================= */
+
+        .vermelho {
+            color: #ff4d4d;
         }
 
-        .botoes{
-            margin-top:30px;
-            display:flex;
-            flex-wrap:wrap;
-            justify-content:center;
-            gap:20px;
+
+        /* =========================
+           DESCRIÇÃO DO PROJETO
+        ========================= */
+
+        .descricao {
+            background: #198754;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: justify;
+            color: white;
+
+            line-height: 1.9;
         }
 
-        .btn-projeto{
-            background:#F1F8E9;
-            color:#33691E;
-            font-weight:bold;
-            text-decoration:none;
-            padding:14px 30px;
-            border-radius:10px;
-            transition:.3s;
+        .descricao p {
+            margin-bottom: 25px;
         }
 
-        .btn-projeto:hover{
-            background:#8BC34A;
-            color:white;
+        .descricao p:last-child {
+            margin-bottom: 0;
         }
 
-        .btn-sugestao{
-            background:#556B2F;
-            color:white;
-            text-decoration:none;
-            padding:10px 25px;
-            border-radius:8px;
-            display:inline-block;
-            transition:.3s;
+
+        /* =========================
+           BOTÕES
+        ========================= */
+
+        .botoes {
+            margin-top: 35px;
+            margin-bottom: 60px;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .btn-sugestao:hover{
-            background:#8BC34A;
-            color:white;
+        .btn-projeto {
+            background: #ff4d4d;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+
+            padding: 14px 30px;
+            border-radius: 10px;
+
+            transition: .3s;
         }
 
-        .card-sugestao img{
-            border-radius:10px;
-            height:220px;
-            object-fit:cover;
+        .btn-projeto:hover {
+            background-color: #da2323;
+            color: white;
         }
 
-        .destaque{
-            color:#ff4d4d;
-            font-weight:bold;
+
+        /* =========================
+           SUGESTÕES
+        ========================= */
+
+        .sugestoes {
+            margin-top: 30px;
+            margin-bottom: 80px;
         }
 
-        footer{
-            background:#33691E;
-            margin-top:70px;
-            padding:35px;
-            text-align:center;
+        .card-sugestao {
+            margin-bottom: 30px;
         }
 
-        footer p{
-            margin:5px;
+        .card-sugestao img {
+            border-radius: 10px;
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+
+            margin-bottom: 20px;
+        }
+
+        .btn-sugestao {
+            background: #198754;
+            color: white;
+            text-decoration: none;
+
+            padding: 10px 25px;
+            border-radius: 8px;
+
+            display: inline-block;
+
+            transition: .3s;
+        }
+
+        .btn-sugestao:hover {
+            background: #115c39;
+            color: white;
+        }
+
+
+        /* =========================
+           REDES SOCIAIS
+        ========================= */
+
+        .redes {
+            margin-top: 80px;
+            padding-top: 20px;
+        }
+
+        .redes p {
+            margin-top: 25px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .redes img {
+            margin-top: 20px;
+        }
+
+
+        /* =========================
+           MENU DROPDOWN
+        ========================= */
+
+        .dropdown-item.active {
+            background-color: #198754 !important;
+            color: white !important;
+        }
+
+        .dropdown-menu:hover .dropdown-item.active:not(:hover) {
+            background-color: transparent !important;
+            color: #212529 !important;
+        }
+
+        .dropdown-item:hover {
+            background-color: #198754 !important;
+            color: white !important;
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            margin-top: 70px;
+            padding: 40px;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 576px) {
+
+            .container-principal {
+                margin: 10px;
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 45px;
+                margin-bottom: 25px;
+            }
+
+            .descricao {
+                padding: 20px;
+                line-height: 1.8;
+            }
+
+            .sugestoes {
+                margin-bottom: 50px;
+            }
+
+            .redes {
+                margin-top: 50px;
+            }
+
         }
 
     </style>
 
 </head>
+
+
 <body>
 
-<div class="container-principal">
 
-    <h1 class="text-center">
-        Projeto: Direito à alimentação escolar: pensando as restrições alimentares
-    </h1>
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
-    <div class="descricao mt-4">
+    <nav class="navbar navbar-dark bg-success navbar-expand-sm py-3 sticky-top">
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt, neque vitae cursus luctus, nisl libero gravida sapien, sed aliquam sapien orci quis mauris. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus condimentum magna non metus efficitur, sit amet dictum odio malesuada. Sed tincidunt ligula vitae velit fermentum.
+        <div class="container">
 
-    </div>
+            <a href="index.html" class="navbar-brand fw-bold">
+                Projeto ExpoCamp
+            </a>
 
-    <!-- Carrossel -->
-    <div id="carouselProjeto" class="carousel slide mt-5" data-bs-ride="carousel">
 
-        <div class="carousel-inner">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuNavbar"
+                aria-controls="menuNavbar"
+                aria-expanded="false"
+                aria-label="Abrir menu">
 
-            <div class="carousel-item active">
-                <img src="https://picsum.photos/1200/450?random=1" class="d-block w-100">
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="menuNavbar">
+
+                <div class="navbar-nav ms-auto">
+
+                    <a href="index.html" class="nav-link fw-bold active">
+                        Principal
+                    </a>
+
+
+                    <div class="dropdown">
+
+                        <a href="#"
+                           class="nav-link dropdown-toggle"
+                           data-bs-toggle="dropdown">
+
+                            Receitas
+
+                        </a>
+
+
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                <a href="chocolate.html" class="dropdown-item">
+                                    Bolo de chocolate
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="cenoura.html" class="dropdown-item">
+                                    Bolo de cenoura
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" class="dropdown-item">
+                                    Calda de chocolate
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <a href="#" class="nav-link">
+                        Realizações
+                    </a>
+
+                    <a href="contato.html" class="nav-link">
+                        Contato
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="carousel-item">
-                <img src="https://picsum.photos/1200/450?random=2" class="d-block w-100">
-            </div>
-
-            <div class="carousel-item">
-                <img src="https://picsum.photos/1200/450?random=3" class="d-block w-100">
-            </div>
-
-            <div class="carousel-item">
-                <img src="https://picsum.photos/1200/450?random=4" class="d-block w-100">
-            </div>
-
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjeto" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
+    </nav>
 
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselProjeto" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
 
-    </div>
 
-    <!-- Pesquisas -->
-    <h2 class="text-center mt-5">
-        Contribua com o projeto participando das pesquisas
-    </h2>
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
 
-    <p class="text-center">
-        <span class="destaque">Sua participação é muito importante!</span>
-    </p>
+    <div class="container-principal">
 
-    <div class="botoes">
 
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScRpU9aB17pdivZrnL4nXljO502_JbmCufGlkyOgvexS9XrQw/viewform?usp=publish-editor" class="btn-projeto">Formulário</a>
+        <h1 class="text-center">
 
-        <a href="#" class="btn-projeto">Indisponível</a>
+            Direito à alimentação escolar:
+            pensando as restrições alimentares
 
-        <a href="#" class="btn-projeto">Indisponível</a>
+        </h1>
 
-        <a href="#" class="btn-projeto">Indisponível</a>
 
-    </div>
 
-   
-    <!-- Objetivo -->
-    <h2 class="text-center mt-5">
-        Nosso objetivo
-    </h2>
+        <!-- DESCRIÇÃO -->
 
-    <div class="descricao mt-3">
+        <div class="descricao">
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae erat id lectus luctus facilisis. Integer feugiat lacus at mauris consequat, sed viverra ligula ultrices. Donec volutpat, nunc nec hendrerit posuere, odio augue suscipit metus, vitae tincidunt arcu tortor eget elit. Donec non massa sed nisl luctus malesuada.
-
-    </div>
- <!-- Sugestões -->
-    <h2 class="text-center mt-5">
-        Conheça as sugestões
-    </h2>
-
-    <div class="row mt-4 g-4">
-
-        <div class="col-md-3 text-center card-sugestao">
-            <img src="https://picsum.photos/300/220?random=11" class="img-fluid shadow">
-            <br><br>
-            <a href="#" class="btn-sugestao">Bolo de chocolate</a>
-        </div>
-
-        <div class="col-md-3 text-center card-sugestao">
-            <img src="https://picsum.photos/300/220?random=12" class="img-fluid shadow">
-            <br><br>
-            <a href="#" class="btn-sugestao">Bolo de fubá</a>
-        </div>
-
-        <div class="col-md-3 text-center card-sugestao">
-            <img src="https://picsum.photos/300/220?random=13" class="img-fluid shadow">
-            <br><br>
-            <a href="#" class="btn-sugestao">Bolo de laranja</a>
-        </div>
-
-        <div class="col-md-3 text-center card-sugestao">
-            <img src="https://picsum.photos/300/220?random=14" class="img-fluid shadow">
-            <br><br>
-            <a href="#" class="btn-sugestao">Bolo de cenoura</a>
-        </div>
-
-    </div>
-
-    <!-- Pesquisa -->
-    <h2 class="text-center mt-5">
-        Conheça a pesquisa
-    </h2>
-
-    <div class="descricao mt-3">
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Donec feugiat lectus sed augue dignissim, sed ultrices augue tempus. Mauris eget dui in mauris tincidunt luctus. Sed varius, lectus nec vestibulum luctus, sapien odio laoreet tortor, sed cursus justo nunc vitae neque.
-
-    </div>
-
-    <div class="row mt-4">
-
-        <div class="col-md-3">
-            <img src="https://picsum.photos/300/250?random=21" class="img-fluid rounded shadow">
-        </div>
-
-        <div class="col-md-3">
-            <img src="https://picsum.photos/300/250?random=22" class="img-fluid rounded shadow">
-        </div>
-
-        <div class="col-md-3">
-            <img src="https://picsum.photos/300/250?random=23" class="img-fluid rounded shadow">
-        </div>
-
-        <div class="col-md-3">
-            <img src="https://picsum.photos/300/250?random=24" class="img-fluid rounded shadow">
-        </div>
-
-    </div>
-
-    <div class="descricao mt-4">
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere commodo nunc vitae faucibus.
-
-    </div>
-
-    <!-- Redes sociais -->
-    <div class="row mt-5 align-items-center">
-
-        <div class="col-md-6 text-center">
-
-            <h2>Acompanhe nossas redes sociais</h2>
 
             <p>
-                Fique por dentro das novidades e acompanhe todas as atualizações do projeto.
+
+                O projeto de pesquisa e extensão
+                <i>"Alimentação escolar como direito: Pensando as restrições alimentares"</i>,
+                orientado pela professora Amanda Veloso Garcia e realizado pela aluna
+                Bianca Berion, da turma 305, já está sendo desenvolvido desde o ano de 2024.
+
             </p>
 
-            <a href="#" class="btn btn-danger btn-lg">
-                Visitar nossas redes
+
+            <p>
+
+                O projeto realiza anualmente a coleta de dados com a finalidade de criar
+                um <b>mapeamento dos alunos e servidores com restrições alimentares</b>
+                no IFRJ – Campus Pinheiral. O projeto também busca promover a
+                <b>conscientização sobre o direito à alimentação escolar</b>,
+                além de apresentar <b>duas sugestões de café da manhã inclusivo</b>.
+
+            </p>
+
+
+            <p>
+
+                Além disso, os dados coletados pelo projeto poderão ser utilizados pelo
+                restaurante do campus, visando trazer melhorias na alimentação escolar,
+                aproximar a comunidade acadêmica e contribuir para a
+                <b>redução de desperdícios.</b>
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             PESQUISA
+        ========================== -->
+
+        <h2 class="text-center vermelho">
+
+            Contribua com o projeto
+            participando da pesquisa!
+
+        </h2>
+
+
+        <div class="botoes">
+
+            <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLScRpU9aB17pdivZrnL4nXljO502_JbmCufGlkyOgvexS9XrQw/viewform?usp=publish-editor"
+                class="btn-projeto">
+
+                Clique aqui
+
             </a>
 
         </div>
 
-        <div class="col-md-6">
 
-            <img src="https://picsum.photos/600/350?random=40"
-                 class="img-fluid rounded shadow">
+
+        <!-- =========================
+             SUGESTÕES
+        ========================== -->
+
+        <div class="sugestoes">
+
+            <h2 class="text-center">
+
+                Conheça as sugestões
+
+            </h2>
+
+
+            <div class="row justify-content-center text-center mt-5">
+
+
+                <!-- BOLO DE CHOCOLATE -->
+
+                <div class="col-md-4 card-sugestao">
+
+                    <img
+                        src="img/foto1.jpg"
+                        class="img-fluid shadow"
+                        alt="Bolo de chocolate">
+
+
+                    <a
+                        href="chocolate.html"
+                        class="btn-sugestao">
+
+                        Bolo de chocolate
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- BOLO DE CENOURA -->
+
+                <div class="col-md-4 card-sugestao">
+
+                    <img
+                        src="img/foto2.jpg"
+                        class="img-fluid shadow"
+                        alt="Bolo de cenoura">
+
+
+                    <a
+                        href="cenoura.html"
+                        class="btn-sugestao">
+
+                        Bolo de cenoura
+
+                    </a>
+
+                </div>
+
+
+            </div>
 
         </div>
 
+
+
+        <!-- =========================
+             REDES SOCIAIS
+        ========================== -->
+
+        <div class="row redes align-items-center">
+
+
+            <div class="col-md-6 text-center">
+
+
+                <h2>
+
+                    Acompanhe nossas redes sociais
+
+                </h2>
+
+
+                <p>
+
+                    Fique por dentro das novidades e acompanhe
+                    todas as atualizações do projeto.
+
+                </p>
+
+
+                <a
+                    href="https://www.instagram.com/veg_if.cpin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                    class="btn btn-danger btn-lg">
+
+                    Visitar nossas redes
+
+                </a>
+
+
+            </div>
+
+
+
+            <div class="col-md-6 text-center">
+
+                <img
+                    src="img/foto3.png"
+                    class="img-fluid rounded shadow"
+                    alt="Imagem do projeto">
+
+            </div>
+
+
+        </div>
+
+
     </div>
 
-</div>
 
-<footer>
 
-    <h3>Contatos</h3>
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
-    <p>📧 biasberion@gmail.com</p>
+    <footer class="bg-success text-light text-center">
 
-    <p>
-        Pesquisa desenvolvida por <strong>Bianca Berion</strong>
-        com orientação de
-        <strong>Amanda Veloso Garcia</strong>.
-    </p>
+        © 2026 — Alimentação escolar como direito:
+        Pensando as restrições alimentares
 
-</footer>
+    </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-const carousel = document.querySelector('#carouselProjeto');
 
-new bootstrap.Carousel(carousel,{
-    interval:4000,
-    ride:'carousel',
-    pause:false,
-    wrap:true
-});
-</script>
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
 
 </body>
+
 </html>
